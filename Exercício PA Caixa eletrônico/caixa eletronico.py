@@ -2,14 +2,14 @@
 usuario = ["Alessandro", "12345-6", "123", 1000.49]  # Nome, Conta, Senha, Saldo
 
 # Tela de login
-print("🔐 Bem-vindo ao Caixa Eletrônico 🔐")
+print(" Bem-vindo ao Caixa Eletrônico ")
 
 conta = input("Digite sua conta: ")
 senha = input("Digite sua senha: ")
 
 # Verificar se a conta e senha estão corretas
 if conta == usuario[1] and senha == usuario[2]:
-    print(f"\n✅ Login bem-sucedido. Bem-vindo, {usuario[0]}!")
+    print(f"\n Login bem-sucedido. Bem-vindo, {usuario[0]}!")
 
     while True:
         print("\n--- Menu ---")
@@ -20,17 +20,17 @@ if conta == usuario[1] and senha == usuario[2]:
         opcao = input("Escolha uma opção: ")
 
         if opcao == "1":
-            print(f"\n💰 Seu saldo atual é: R$ {usuario[3]:.2f}")
+            print(f"\n Seu saldo atual é: R$ {usuario[3]:.2f}")
 
         elif opcao == "2":
             valor = float(input("\nInforme o valor para saque (múltiplos de R$10, máximo R$1500): R$ "))
 
             if valor > usuario[3]:
-                print("❌ Saldo insuficiente.")
+                print(" Saldo insuficiente.")
             elif valor > 1500:
-                print("❌ Valor excede o limite máximo por operação (R$1500).")
+                print(" Valor excede o limite máximo por operação (R$1500).")
             elif valor % 10 != 0:
-                print("❌ O valor deve ser múltiplo de R$10.")
+                print(" O valor deve ser múltiplo de R$10.")
             else:
                 # Cálculo das notas
                 notas100 = int(valor // 100)
@@ -58,14 +58,14 @@ if conta == usuario[1] and senha == usuario[2]:
                 if notas10 > 0:
                     print(f"R$10: {notas10} nota(s)")
 
-                print(f"\n✅ Saque realizado com sucesso. Novo saldo: R$ {usuario[3]:.2f}")
+                print(f"\n Saque realizado com sucesso. Novo saldo: R$ {usuario[3]:.2f}")
 
         elif opcao == "3":
-            print("\n👋 Obrigado por usar o Caixa Eletrônico. Até logo!")
+            print("\n Obrigado por usar o Caixa Eletrônico. Até logo!")
             break
 
         else:
-            print("❌ Opção inválida. Tente novamente.")
+            print(" Opção inválida. Tente novamente.")
 
 else:
-    print("❌ Conta ou senha inválidos. Acesso negado.")
+    print(" Conta ou senha inválidos. Acesso negado.")
